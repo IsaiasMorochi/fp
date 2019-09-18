@@ -3,7 +3,7 @@ package Lambda;
 
 public class Lambda implements PorDefecto{
 
-    public static void main(String[] args){
+    public static void main(String[] arg){
         System.out.println(System.getProperty("java.runtime.version"));
 
         /**
