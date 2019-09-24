@@ -21,11 +21,21 @@ public class StreamPrueba {
         Stream stream = Stream.of(users);
         users.stream();
 
+        titulo("forEach");
         users.stream().forEach(user -> user.setNombre(user.getNombre() + " Apellido"));
         imprimirLista();
 
+        titulo("Map y Collectors.toList");
         List<String> list = users.stream().map(user -> user.getNombre()).collect(Collectors.toList());
         list.stream().forEach(s -> System.out.println(s));
+
+        titulo("Filters");
+        setUpUser();
+        List<User> usersFilters = users.stream()
+                .filter(user -> user.getNombre() != "Pepito")
+                .filter(user -> user.getId() < 3)
+                .collect(Collectors.toList());
+        usersFilters.stream().forEach(user -> System.out.println(user.getId() + " " + user.getNombre()));
     }
 
     public static void setUpUser(){
@@ -39,5 +49,9 @@ public class StreamPrueba {
 
     private static void imprimirLista(){
         users.stream().forEach(user -> System.out.println(user.getId() + " " + user.getNombre()));
+    }
+
+    private static void titulo(String titulo){
+        System.out.println("------------------------"+ titulo +"-------------------------------");
     }
 }
