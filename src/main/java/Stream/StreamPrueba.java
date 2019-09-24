@@ -2,6 +2,7 @@ package Stream;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -56,6 +57,14 @@ public class StreamPrueba {
                 .flatMap(s -> s.stream())
                 .collect(Collectors.toList());
         nombreUnicaLista.stream().forEach(e -> System.out.println(e));
+
+        titulo("Peek");
+        setUpUser();
+        List<User> userList = users.stream()
+                .peek(user1 -> user1.setNombre(user1.getNombre() + " Apellido"))
+                .collect(Collectors.toList());
+        userList.stream().forEach(user1 -> System.out.println(user1.getNombre()));
+
 
 
     }
