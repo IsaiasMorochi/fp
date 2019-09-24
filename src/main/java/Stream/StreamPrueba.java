@@ -147,6 +147,21 @@ public class StreamPrueba {
 
         partitioningBy();
 
+        groupingBy();
+
+    }
+
+    /**
+     * Realiza una agrupacion
+     */
+    private static void groupingBy() {
+        titulo("groupingBy");
+        setUpUser();
+        Map<Character, List<User>> grupoAlfabetico = users.stream()
+                .collect(Collectors.groupingBy(user -> new Character(user.getNombre().charAt(0))));
+        grupoAlfabetico.get('C').stream().forEach(e -> System.out.println(e.getNombre()));
+        grupoAlfabetico.get('M').stream().forEach(e -> System.out.println(e.getNombre()));
+        grupoAlfabetico.get('P').stream().forEach(e -> System.out.println(e.getNombre()));
     }
 
     /**
