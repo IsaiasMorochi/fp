@@ -65,6 +65,13 @@ public class StreamPrueba {
                 .collect(Collectors.toList());
         userList.stream().forEach(user1 -> System.out.println(user1.getNombre()));
 
+        titulo("Count");
+        setUpUser();
+        long numeroFiltrado = users.stream()
+                .filter(user1 -> user1.getId() < 3)
+                .count();
+        System.out.println(numeroFiltrado);
+
 
 
     }
