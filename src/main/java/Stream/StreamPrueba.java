@@ -105,6 +105,19 @@ public class StreamPrueba {
                 .collect(Collectors.toList());
         abcFilter1.stream().forEach(s -> System.out.println(s));
 
+        titulo("allMatch, anyMatch, noneMatch");
+        List<Integer> integerList = Arrays.asList(100,200,300,400);
+        boolean allMatch = integerList.stream().allMatch(integer -> integer > 200);
+        System.out.println(allMatch);
+
+        boolean anyMatch = integerList.stream().anyMatch(integer -> integer > 200);
+        System.out.println(anyMatch);
+
+        boolean noneMatch = integerList.stream().allMatch(integer -> integer > 2000);
+        System.out.println(noneMatch); //ningun elemento supera los 2000
+
+        titulo("Sum Average range");
+
     }
 
     private static void setUpUser(){
