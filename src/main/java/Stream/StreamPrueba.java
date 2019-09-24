@@ -89,7 +89,7 @@ public class StreamPrueba {
 
     }
 
-    public static void setUpUser(){
+    private static void setUpUser(){
         users = new ArrayList<>();
         users.add(new User(1,"Carlos"));
         users.add(new User(2,"Pepito"));

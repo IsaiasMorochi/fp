@@ -6,12 +6,24 @@
 > * Metodos por Defecto
 
 ### 2 Referencia a Metodos
- > * Referencia a Metodo Estatico
- > * Referencia a Metodo de instancia
- > * Metodo referencia Objeto Arbitrario
- > * Referencia a constructor
+> * Referencia a Metodo Estatico
+> * Referencia a Metodo de instancia
+> * Metodo referencia Objeto Arbitrario
+> * Referencia a constructor
 
 ### 3 Optional
- > * Optional or Else
- > * Optional or Else Throw
- > * Optional isPresent
+> * Optional or Else
+> * Optional or Else Throw
+> * Optional isPresent
+
+### 4 Streams
+> * ForEach
+> * Map
+> * Filter
+> * FindFirts
+> * FlatMap
+> * Peek
+> * Count
+> * Skip y Limit
+> * Sorted
+> *
