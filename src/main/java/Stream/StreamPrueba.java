@@ -98,6 +98,13 @@ public class StreamPrueba {
                 .orElse(null);
         System.out.println(userMax.getId());
 
+        titulo("Distinct");
+        String[] abc1 = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j","a","b"};
+        List<String> abcFilter1 = Arrays.stream(abc1)
+                .distinct()
+                .collect(Collectors.toList());
+        abcFilter1.stream().forEach(s -> System.out.println(s));
+
     }
 
     private static void setUpUser(){
