@@ -41,13 +41,14 @@ public class ReferenciaMetodo {
                 User.referenciaMetodoEstatico();
             }
         };
+        trabajo.accion();
 
         //lambda
         Trabajo trabajoL = () -> User.referenciaMetodoEstatico();
         Trabajo trabajoMR = User::referenciaMetodoEstatico;
         trabajoMR.accion();
 
-        /* Referencia a un      instancia::metodoInstancia       s:toString            () -> "string".toString
+        /* Referencia a un       instancia::metodoInstancia       s:toString        () -> "string".toString
          * metodo de instancia
          * de un objeto
          * particular
@@ -60,7 +61,7 @@ public class ReferenciaMetodo {
 
 
         /* ----------------------------------------------------------------------------------------------------
-         * Referencia a un      Class::metodoInstancia           String::toString      s -> s.toString()
+         * Referencia a un       Class::metodoInstancia       String::toString      s -> s.toString()
          * metodo de instancia
          * de un objeto
          * arbitrario de
@@ -68,7 +69,7 @@ public class ReferenciaMetodo {
          */
         TrabajoString trabajoString = (palabra) -> palabra.toUpperCase();
         TrabajoString trabajoStringMR = String::toUpperCase;
-        System.out.println(trabajoStringMR.accion("isaias"));
+        System.out.println(trabajoStringMR.accion("isaias with fuctional programing"));
 
         List<User> users = new ArrayList<>();
         users.add(new User("Isaias"));

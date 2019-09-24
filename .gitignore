@@ -1,6 +1,6 @@
 
-# Created by https://www.gitignore.io/api/java,linux,maven,windows,intellij+all,visualstudiocode
-# Edit at https://www.gitignore.io/?templates=java,linux,maven,windows,intellij+all,visualstudiocode
+# Created by https://www.gitignore.io/api/java,linux,windows,intellij+all
+# Edit at https://www.gitignore.io/?templates=java,linux,windows,intellij+all
 
 ### Intellij+all ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
@@ -128,29 +128,6 @@ hs_err_pid*
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
-### Maven ###
-target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
-.mvn/wrapper/maven-wrapper.jar
-
-### VisualStudioCode ###
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-
-### VisualStudioCode Patch ###
-# Ignore all local history of files
-.history
-
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
@@ -177,4 +154,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.gitignore.io/api/java,linux,maven,windows,intellij+all,visualstudiocode
+# End of https://www.gitignore.io/api/java,linux,windows,intellij+all
