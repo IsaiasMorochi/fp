@@ -1,10 +1,8 @@
 package Stream;
 
 import javax.jws.soap.SOAPBinding;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -141,7 +139,12 @@ public class StreamPrueba {
         System.out.println(numero);
 
         joining();
+
+        toSet();
+
     }
+
+
 
     /**
      * Permite concatenar por un delimitador
@@ -154,6 +157,19 @@ public class StreamPrueba {
                 .collect(Collectors.joining("|"))
                 .toString();
         System.out.println(names);
+    }
+
+    /**
+     * Nose devuelve un colector de los elementos de entrada
+     * nos garantiza que no habra elementos repetidos
+     */
+    private static void toSet() {
+        titulo("toSet");
+        setUpUser();
+        Set<String> setNames = users.stream()
+                .map(User::getNombre)
+                .collect(Collectors.toSet());
+        setNames.stream().forEach(System.out::println);
     }
 
     private static void setUpUser(){
