@@ -36,6 +36,15 @@ public class StreamPrueba {
                 .filter(user -> user.getId() < 3)
                 .collect(Collectors.toList());
         usersFilters.stream().forEach(user -> System.out.println(user.getId() + " " + user.getNombre()));
+
+        titulo("Find Firts");
+        setUpUser();
+        User user = users.stream()
+                .filter(e -> e.getNombre().equals("Pepito"))
+                .findFirst()
+                .orElse(null);
+        System.out.println(user.getId() + " " + user.getNombre());
+
     }
 
     public static void setUpUser(){
