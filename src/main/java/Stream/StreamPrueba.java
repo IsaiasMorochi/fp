@@ -72,6 +72,14 @@ public class StreamPrueba {
                 .count();
         System.out.println(numeroFiltrado);
 
+        titulo("Skip y Limit");
+        String[] abc = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j"};
+        List<String> abcFilter = Arrays.stream(abc)
+                .skip(2)  //salta los elementos
+                .limit(4) //los limita solo a 4 elementos
+                .collect(Collectors.toList());
+        abcFilter.stream().forEach(s -> System.out.println(s));
+
 
 
     }
