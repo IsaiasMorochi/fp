@@ -149,6 +149,27 @@ public class StreamPrueba {
 
         groupingBy();
 
+        mapping();
+
+        streamParalelo();
+
+    }
+
+    private static void streamParalelo() {
+        titulo("Stream Paralelo");
+        setUpUser();
+
+    }
+
+    /**
+     * Convierte en una lista
+     */
+    private static void mapping() {
+        titulo("mapping");
+        setUpUser();
+        List<String> personas = users.stream()
+                .collect(Collectors.mapping(User::getNombre, Collectors.toList()));
+        personas.stream().forEach(e -> System.out.println(e));
     }
 
     /**
