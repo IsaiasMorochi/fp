@@ -1,6 +1,7 @@
 package Stream;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -44,6 +45,18 @@ public class StreamPrueba {
                 .findFirst()
                 .orElse(null);
         System.out.println(user.getId() + " " + user.getNombre());
+
+        titulo("FlatMap");
+        List<List<String>> nombresVariasListas = new ArrayList<List<String>>(
+                Arrays.asList(
+                        new ArrayList<String>(Arrays.asList("Albeto", "Maria", "Pedro")),
+                        new ArrayList<String>(Arrays.asList("Monica", "Pablo"))
+        ));
+        List<String> nombreUnicaLista = nombresVariasListas.stream()
+                .flatMap(s -> s.stream())
+                .collect(Collectors.toList());
+        nombreUnicaLista.stream().forEach(e -> System.out.println(e));
+
 
     }
 
