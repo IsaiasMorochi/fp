@@ -87,6 +87,17 @@ public class StreamPrueba {
                 .collect(Collectors.toList());
         imprimirLista();
 
+        titulo("Min y Max");
+        setUpUser();
+        User userMin = users.stream()
+                .min(Comparator.comparing(User::getId))
+                .orElse(null);
+        System.out.println(userMin.getId());
+        User userMax = users.stream()
+                .max(Comparator.comparing(User::getId))
+                .orElse(null);
+        System.out.println(userMax.getId());
+
     }
 
     private static void setUpUser(){
