@@ -26,4 +26,15 @@
 > * Count
 > * Skip y Limit
 > * Sorted
-> *
+> * Min y Max
+> * Distinct
+> * AllMatch, AnyMatch, None Match
+> * Sum, Average, Range
+> * Reduce
+> * Joining
+> * toSet
+> * SummarinzingDouble
+> * PartitioningBy
+> * GroupingBy
+> * Mapping
+> * Streams Paralelo
