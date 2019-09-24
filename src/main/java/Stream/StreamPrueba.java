@@ -80,7 +80,12 @@ public class StreamPrueba {
                 .collect(Collectors.toList());
         abcFilter.stream().forEach(s -> System.out.println(s));
 
-
+        titulo("Sorted");
+        setUpUser();
+        users = users.stream()
+                .sorted(Comparator.comparing(User::getNombre))
+                .collect(Collectors.toList());
+        imprimirLista();
 
     }
 
