@@ -142,8 +142,18 @@ public class StreamPrueba {
 
         toSet();
 
+        summarizingDouble();
+
     }
 
+    private static void summarizingDouble() {
+        titulo("summarizingDouble");
+        setUpUser();
+        DoubleSummaryStatistics summaryStatistics = users.stream()
+                .collect(Collectors.summarizingDouble(User::getId));
+        System.out.println(summaryStatistics.getAverage() + " " + summaryStatistics.getMax() + " " +
+                summaryStatistics.getMin() + " " + summaryStatistics.getCount() + " " + summaryStatistics.getSum() );
+    }
 
 
     /**
