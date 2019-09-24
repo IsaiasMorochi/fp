@@ -1,10 +1,12 @@
 package Stream;
 
+import javax.jws.soap.SOAPBinding;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
@@ -117,6 +119,20 @@ public class StreamPrueba {
         System.out.println(noneMatch); //ningun elemento supera los 2000
 
         titulo("Sum Average range");
+        setUpUser();
+        double result = users.stream()
+                .mapToInt(User::getId)
+                .average()
+                .orElse(0);
+        System.out.println(result);
+
+        result = users.stream()
+                .mapToInt(User::getId)
+                .sum();
+        System.out.println(result);
+
+        System.out.println(IntStream.range(0,100).sum());
+
 
     }
 
@@ -127,6 +143,7 @@ public class StreamPrueba {
         users.add(new User(3,"Jose"));
         users.add(new User(4,"Maria"));
         users.add(new User(5,"Pepito"));
+        users.add(new User(6,"Noelia"));
     }
 
     private static void imprimirLista(){
