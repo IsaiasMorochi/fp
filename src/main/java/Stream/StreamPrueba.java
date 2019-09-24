@@ -1,6 +1,7 @@
 package Stream;
 
 import javax.jws.soap.SOAPBinding;
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -144,6 +145,23 @@ public class StreamPrueba {
 
         summarizingDouble();
 
+        partitioningBy();
+
+    }
+
+    /**
+     * De una lista de elementos devuelve dos listas
+     * una que se cumple el predicado y
+     * otra en la que no se cumple el predicado
+     */
+    private static void partitioningBy() {
+        titulo("partitioningBy");
+        setUpUser();
+        List<Integer> listNumbers = Arrays.asList(5,7,34,56,2,3,67,4,98);
+        Map<Boolean, List<Integer>> esMayor = listNumbers.stream()
+                .collect(Collectors.partitioningBy(o -> o > 10));
+        esMayor.get(true).stream().forEach(i -> System.out.println(i));
+        esMayor.get(false).stream().forEach(i -> System.out.println(i));
     }
 
     private static void summarizingDouble() {
@@ -153,6 +171,12 @@ public class StreamPrueba {
                 .collect(Collectors.summarizingDouble(User::getId));
         System.out.println(summaryStatistics.getAverage() + " " + summaryStatistics.getMax() + " " +
                 summaryStatistics.getMin() + " " + summaryStatistics.getCount() + " " + summaryStatistics.getSum() );
+
+        DoubleSummaryStatistics summaryStatistics1 = users.stream()
+                .mapToDouble(User::getId)
+                .summaryStatistics();
+        System.out.println(summaryStatistics1.getAverage() + " " + summaryStatistics1.getMax() + " " +
+                summaryStatistics1.getMin() + " " + summaryStatistics1.getCount() + " " + summaryStatistics1.getSum() );
     }
 
 
