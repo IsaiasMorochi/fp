@@ -140,7 +140,20 @@ public class StreamPrueba {
                 .reduce(0, Integer::sum); //identity : valor por el que comienza
         System.out.println(numero);
 
+        joining();
+    }
 
+    /**
+     * Permite concatenar por un delimitador
+     */
+    private static void joining() {
+        titulo("Joining");
+        setUpUser();
+        String names = users.stream()
+                .map(User::getNombre)
+                .collect(Collectors.joining("|"))
+                .toString();
+        System.out.println(names);
     }
 
     private static void setUpUser(){
