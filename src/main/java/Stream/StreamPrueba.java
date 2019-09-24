@@ -133,6 +133,13 @@ public class StreamPrueba {
 
         System.out.println(IntStream.range(0,100).sum());
 
+        titulo("Reduce");
+        setUpUser();
+        int numero = users.stream()
+                .map(User::getId)
+                .reduce(0, Integer::sum); //identity : valor por el que comienza
+        System.out.println(numero);
+
 
     }
 
@@ -153,4 +160,5 @@ public class StreamPrueba {
     private static void titulo(String titulo){
         System.out.println("------------------------"+ titulo +"-------------------------------");
     }
+
 }
